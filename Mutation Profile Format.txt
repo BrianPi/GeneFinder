@@ -1,0 +1,12 @@
+.mprof files should be formatted as follows:
+Plaintext, with a descriptor tab-separated from numeric data.
+All data in the document should be at the same scale. Numbers can be expressed as a percentage, or a raw number of mutations; anything as long as it's on a consistant linear scale.
+Appropriate descriptors are as follows "SNI", "SND", "MNID", or any combination of two DNA nucleotides ('A','C','G','T'), where the first is the nucleotide being transitioned from and the second is the one transitioned to. Parsing is flexible, so descriptors formatted with non-alphabetic characters, such as "A->G" or even those including complementary basepairs after initial and final pairs, such as "A:T->G:C" are okay.
+The number after the tab represents a relative probability of mutation, in atof-consumable format.
+For two nucleotide descriptors, this is the probability of mutation from the first to the second.
+For "SNI", this is the probability of a single nucleotide insertion along the entire sequence.
+For "SND", this is the probability of a single nucleotide deletion along the entire sequence.
+"MNID" is a special case standing for "Multiple Nucleotide Insertion/Deletion". After an "MNID" descriptor tab-separated data triplets are read in, starting on the next line. The first value is expected to be an integer describing the number of nucleotides in the multiple insertions or deletions. The next value is the number of insertions of that many basepairs, the third is the number of deletions. The first line violating MNID's formatting assumptions is not read (REPEAT: the line after an MNID block is not read), and normal parsing resumes.
+This format is defined to allow multiple descriptor instances of each type to be read in.
+
+This format is subject to change.
