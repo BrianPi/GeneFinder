@@ -1,4 +1,4 @@
-#GeneFinder
+# GeneFinder
 
 This project aims to provide some tools to aid in genetic archeology and understanding.
 Given a 5-to-3 FASTA DNA sequence, a codon translation table in NCBI format, and a mutation profile in the custom .mprof mutation file format, it will attempt to aid in determining whether the sequence has been mutating around a similar configuration or a different one.
