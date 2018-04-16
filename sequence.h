@@ -90,7 +90,7 @@ vector<gene> sequence::getGenes(){
 			}
 		}
 		if(circular){
-			for(;index+offset<2*rawsequence.size();index++){ //Keep going where loop left off
+			for(;index+offset<2*rawsequence.size();index=index+3){ //Keep going where loop left off
 				//Initializing new genes would be redundant
 				if(translationKey.isStop(operator[](index+offset))){
 					for(int i=0; i<geneStarts.size(); i++){
