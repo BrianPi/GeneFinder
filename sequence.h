@@ -20,7 +20,7 @@ class sequence{ //Stores FASTA data
 class gene{ 
 	public:
 	gene(unsigned int start, unsigned int length, sequence* source){startIndex=start;codonLength=length;genome=source;} //Constructs gene from start index and length
-	//Consider extending to deal with start/end mutation, noncoding sequences...
+	//Consider extending to deal with start/end mutation, noncoding sequences, and complementary sequences
 	codon operator[](unsigned int index) const;
 	unsigned int start(){return startIndex;}
 	unsigned int length(){return codonLength;}
